@@ -1,0 +1,21 @@
+
+
+mixin customerDetails(owner)
+  .customer__row.info
+    span.info__label name
+    span.info__value #{owner.name}
+  .customer__row.info
+    span.info__label phone
+    span.info__value #{owner.phone}
+  .customer__row.info
+    span.info__label email
+    span.info__value #{owner.email}
+  .customer__row.info
+    span.info__label Street
+    span.info__value #{owner.address.street}
+  .customer__row.info
+    span.info__label post code and city
+    span.info__value #{owner.address.postalCode} #{owner.address.town}
+  .customer__row.info
+    span.info__label country
+    span.info__value Finland

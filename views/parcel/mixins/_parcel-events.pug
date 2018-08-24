@@ -1,0 +1,8 @@
+
+mixin parcelEvents(events)
+  b Event log
+  each event in events
+    .parcel-event
+      span.parcel-event__name #{event.name}
+      //span.parcel-event__name(style='background:red') #{event.type}
+      span.parcel-event__when #{event.when  }

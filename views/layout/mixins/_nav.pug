@@ -1,0 +1,14 @@
+mixin nav()
+  nav.nav
+    if user
+      li.nav__item: a.nav__link(href="/customs/settings", class=(currentPath.startsWith('/customs/settings') ? 'nav__link--active' : ''))
+        i.fal.fa-user-cog.fa-2x.fa-inverse
+        span Settings
+      li.nav__item: a.nav__link(href="/customs/logout", class=(currentPath.startsWith('/customs/logout') ? 'nav__link--active' : ''))
+        i.fal.fa-hand-peace.fa-2x.fa-inverse
+        span Logout
+      //li.nav__item: a.nav__link(href="/account", class=(currentPath.startsWith('/customs/account') ? 'nav__link--active' : ''))
+      //  img.avatar(src=user.gravatar + 'd=retro')
+    else
+      li.nav__item: a.nav__link(href="/customs/register", class=(currentPath.startsWith('/register') ? 'nav__link--active' : '')) Register
+      li.nav__item: a.nav__link(href="/customs/login", class=(currentPath.startsWith('/login') ? 'nav__link--active' : '')) Log In

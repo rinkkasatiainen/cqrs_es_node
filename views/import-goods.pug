@@ -1,0 +1,13 @@
+extends layout/layout
+
+block content
+
+  pre= h.dump(title)
+
+  form.form(action=`/import/${goods_id}` method="PUT")
+    h2 Login
+    label(for="goods_name") Goods name
+    input(type="text" name="goods_name" value
+    disabled)
+    input.button(type="submit" value="Approve →")
+    

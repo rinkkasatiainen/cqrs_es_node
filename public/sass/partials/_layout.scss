@@ -1,0 +1,86 @@
+html {
+  font-size: 10px;
+  height: 100%;
+}
+
+body {
+  &:before {
+    content: '';
+    display: block;
+    background: $grad;
+    height: 10px;
+    width: 100%;
+  }
+  min-height: 100vh;
+  //min-height: calc(100vh - 100px);
+}
+
+.main{
+  display: grid;
+
+  grid-template-areas:
+          "header header header header header"
+          "left nav nav nav right"
+          "left . flashes . right"
+          "left . content . right"
+          "footer footer footer footer footer";
+
+  grid-template-rows: 10px f auto 1fr auto;
+  grid-template-columns: 50px 10px 1fr 10px 50px;
+  align-content: stretch;
+  min-height: calc(100vh - 10px);
+
+  &.customs{
+    grid-template-rows: 10px 40px auto 1fr auto;
+  }
+}
+
+.header{
+  grid-area: header;
+  background: $grad;
+}
+.nav {
+  background-color: $background_nav;
+  grid-area: nav;
+}
+.content {
+  grid-area: content;
+}
+.footer{
+  grid-area: footer;
+  align-self: end;
+}
+.flashes{
+  grid-area: flashes;
+  padding: 10px;
+}
+.left{
+  grid-area: left;
+  background-color: $aland-blue;
+
+}
+.right{
+  grid-area: right;
+  background-color: $aland-blue;
+}
+
+@media all and (max-width: 650px) {
+  .main{
+    grid-template-areas:
+            "header header header"
+            "left nav right "
+            "left flashes right"
+            "left content right"
+            "footer footer footer";
+    grid-template-rows: 10px 70px auto 1fr 10px;
+    grid-template-columns: 10px 1fr 10px;
+  }
+}
+
+.inner {
+  max-width:900px;
+  margin: 0 auto;
+  @media all and (max-width: 900px) {
+    padding: 2rem;
+  }
+}

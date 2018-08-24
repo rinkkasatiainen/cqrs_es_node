@@ -1,0 +1,12 @@
+include ../forms/_address
+
+mixin parcelForm(data = {})
+  form.form(action="/customs/parcel" method="POST")
+    .form__title
+    .form_grid.form_import
+      +customerBlock(data.customer)
+      +addressBlock()
+      +parcelBlock()
+
+
+    input.button(type="submit" value="Register →")

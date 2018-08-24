@@ -1,0 +1,7 @@
+extends layout/layout
+
+block content
+  .inner
+    h2= status
+    p= "You are unauthorized to view the contents of the parcel"
+  pre.error!= stackHighlighted

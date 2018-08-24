@@ -1,0 +1,41 @@
+mixin addressBlock()
+  .form__block.form_address
+    h3 Address
+    .has-float-label
+      input(type="text" name="address[street]"  id='street' placeholder='')
+      label(for="street") Street
+    .has-float-label
+      input(type="text" name="address[postCode]" id="postCode" placeholder='')
+      label(for="postCode") Post code
+    .has-float-label
+      input(type="text" name="address[town]"      id='town' placeholder='')
+      label(for="town") Town
+    .has-float-label
+      input(type="text" name="address[country]"   id='country' disabled='disabled' value='Finland' placeholder='')
+      label(for="country") Country
+
+mixin customerBlock(customer = {})
+  .form__block.form_customer
+    h3 Recipient
+    .has-float-label
+      input(type="text" name="customer[name]" id="name" value=(customer.name || 'Kalle Kalander') placeholder='')
+      label(for="name") Full name
+    .has-float-label
+      input(type="text" name="customer[phone-number]" id='phone-number' value=(customer['phone-number']) placeholder='')
+      label(for="phone-number") Phone number
+    .has-float-label
+      input(type="email" name="customer[email]" id='email' value=(customer['email'] || 'kalle@awesomemail.ax') placeholder='')
+      label(for="email") email address
+
+mixin parcelBlock()
+  .form__block.form_goods
+    h3 Shipment info
+    .has-float-label
+      input(type="text" name="parcel[from]" id="from" placeholder='')
+      label(for="from") From
+    .has-float-label
+      input(type="text" name="parcel[type]" id='type' placeholder='')
+      label(for="type") Type of parcel
+    .has-float-label
+      input(type="text" name="parcel[price]" id='price' placeholder='')
+      label(for="price") Price of cargo

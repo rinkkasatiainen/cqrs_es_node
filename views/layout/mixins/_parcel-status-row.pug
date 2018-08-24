@@ -1,0 +1,27 @@
+include _parcel-status
+
+mixin parcelStatusRow(event_types = [])
+  .parcel-status__box.status
+    span.status__img.fa-layers.fa-fw.fa-3x(style="background:white")
+      i.fa-inverse.fal.fa-truck(data-fa-transform="")(style="color:#01586b")
+      i.fas.fa-box(style="color:#01586b")(data-fa-transform="shrink-9 left-3")
+    +parcelStatus('ParcelReceivedAtCustoms', event_types)
+  .parcel-status__box.status
+    span.status__img.fa-layers.fa-fw.fa-3x(style="background:white")
+      i.fa-inverse.fal.fa-envelope(style="color:#01586b")
+      i.fas.fa-at(style="color:#01586b")(data-fa-transform="shrink-9 up-2")
+    +parcelStatus('RECIPIENTNOTIFIEDNEWSHIPMENT', event_types)
+  .parcel-status__box.status
+    span.status__img.fa-layers.fa-fw.fa-3x(style="background:white")
+      i.fa-inverse.fal.fa-money-bill-alt(style="color:#01586b")
+    +parcelStatus('VATASSIGNED', event_types)
+  .parcel-status__box.status
+    span.status__img.fa-layers.fa-fw.fa-3x(style="background:white")
+      i.fa-inverse.fal.fa-money-bill(style="color:#01586b")
+      - if (event_types.includes('PAID'))
+        i.fas.fa-check(style="color:green")(data-fa-transform="shrink-4")
+    +parcelStatus('PAID', event_types)
+  .parcel-status__box.status
+    span.status__img.fa-layers.fa-fw.fa-3x(style="background:white")
+      i.fa-inverse.fal.fa-person-dolly(style="color:#01586b")
+    +parcelStatus('APPROVEDBYCUSTOMS', event_types)

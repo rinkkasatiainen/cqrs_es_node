@@ -1,0 +1,98 @@
+/*
+ parcel
+ */
+
+
+.parcel{
+  display: grid;
+
+  grid-template-areas:
+          "status status"
+          "events customer"
+          "act act";
+
+  grid-template-rows: 70px auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  align-content: stretch;
+  min-height: calc(100vh - 10px);
+
+  &-status{
+    grid-area: status;
+    display: flex;
+    justify-content: center;
+    &__box{
+      padding: 1em;
+    }
+  }
+
+  &-customer{
+    grid-area: customer;
+  }
+
+  &-events{
+    grid-area: events;
+  }
+
+  &-act{
+    grid-area: act;
+    padding: 0 5em;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .parcel{
+    grid-template-areas:
+            "status"
+            "act"
+            "events"
+            "customer";
+    grid-template-rows: 70px auto auto auto;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+
+  }
+}
+
+
+.status{
+  display: flex;
+  flex-direction: column;
+
+  &__color{
+    margin-top: 1em;
+    height: 20px;
+    color: blue;
+    widht: 100%;
+  }
+}
+.customer{
+  display: flex;
+  flex-direction: column;
+
+  &__row{
+    padding: 0.4em 0;
+  }
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+
+  &__label{
+    flex: 2;
+  }
+  &__value{
+    flex: 3;
+  }
+}
+.parcel-event{
+  display: flex;
+  flex-direction: column;
+  padding: 0.9rem;
+
+  &__when{
+    font-weight: bold;
+    text-align: end;
+  }
+}

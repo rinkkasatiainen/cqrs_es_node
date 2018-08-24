@@ -1,0 +1,14 @@
+extends layout
+
+include mixins/_parcel-status-row
+
+
+block content
+
+  block parcel-header
+    h2 Parcel
+
+  .parcel
+    .parcel__row.parcel-status
+      +parcelStatusRow(event_types)
+    block parcel-content

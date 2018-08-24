@@ -1,0 +1,29 @@
+$black: #303030;
+$width: 800px;
+$purple: #262161;
+$yellow: #FFC40E;
+$pink: #EE7297;
+$green: #93FF00;
+$red: #E50714;
+
+$aland-blue: #01586b;
+$aland-blue-light: #1a7486;
+$aland-grey: rgb(102, 102, 102);
+$aland-grey-light: rgba(1, 102, 102, 0.35);
+
+$quite-white: rgba(0,0,0, 0.11);
+$white: rgba(0,0,0, 0.11);
+
+//colores
+//$background_body: #efefef;
+$background_body: $aland-blue-light;
+$background_nav: $aland-grey;
+$background_content: $quite-white;
+//$background_content: lighten( $aland-grey, 10% );
+
+$grey: lighten(grey, 40%);
+$shad: 0 0 10px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+$grad: linear-gradient(90deg, $aland-blue 10%, $aland-grey 45%, $aland-grey 55%, $aland-blue 90%);
+$verticalGrad: linear-gradient(0, $aland-blue 0%, #a026bf 20%, #e82c75 60%, $yellow 85%, $aland-blue 95%);
+//$grad: linear-gradient(90deg, #48ded4 0%, #a026bf 20%, #e82c75 60%, $yellow 85%, #48ded4 95%);
+//$verticalGrad: linear-gradient(0, #48ded4 0%, #a026bf 20%, #e82c75 60%, $yellow 85%, #48ded4 95%);

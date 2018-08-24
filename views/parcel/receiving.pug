@@ -1,0 +1,16 @@
+extends ../layout/parcel-layout
+
+include mixins/_customer-details
+include mixins/_parcel-events
+
+block parcel-header
+  h2 Receiving a little nice IKEA shipment, are you not?
+
+block parcel-content
+  .parcel__row.parcel-customer.customer
+    +customerDetails(owner)
+  .parcel__row.parcel-events
+    +parcelEvents(events)
+  each link in links
+    form(method=link.method, action=link.href).parcel-act
+      input.button(type="submit" value=`${link.rel} →`)

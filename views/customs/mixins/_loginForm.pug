@@ -1,0 +1,10 @@
+mixin loginForm()
+  form.form(action="/customs/login" method="POST")
+    h2 Login
+    .has-float-label
+      input(type="email" name="email" id='email' placeholder='')
+      label(for="email") Email Address
+    .has-float-label
+      input(type="password" name="password" id='password' placeholder='')
+      label(for="password") Password
+    input.button(type="submit" value="Log In →")

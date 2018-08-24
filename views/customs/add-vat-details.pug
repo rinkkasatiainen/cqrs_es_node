@@ -1,0 +1,41 @@
+extends ../layout/customs-layout
+
+include ../layout/mixins/_parcel-status-row
+include ../mixins/parcel/_new
+include ../parcel/mixins/_customer-details
+include ../parcel/mixins/_parcel-events
+
+block content
+
+  block parcel-header
+    h2 Manage Shipment
+
+  .parcel
+    .parcel__row.parcel-status
+      +parcelStatusRow(event_types)
+    block parcel-content
+      .parcel__row.parcel-customer.customer
+        form(method='POST')
+          .info.has-float-label
+            input(type="text" name="vat0_amount" id="vat0_amount" value="100" placeholder='')
+            label(for="vat0_amount") VAT 0
+          .info.has-float-label
+            select(name="vat_type" id="vat_type"  )
+              option(value="BOOKS") Books
+              option(value="TV") TV
+            label(for="vat_type") VAT TYPE
+          .info.has-float-label
+            select(name="vat_percentage" id="vat_percentage" )
+              option(value="24") 24
+              option(value="14") 14
+            label(for="vat_percentage") VAT Percentage
+          .info.has-float-label
+            input(type="text" name="vat_amount" id="vat_amount" value="24" placeholder='')
+            label(for="vat_amount") VAT Percentage
+
+          input.button(type="submit" value='Assign VAT →')
+      .parcel__row.parcel-events
+        embed(src="/data/example.pdf" width="500" height="375" type='application/pdf')
+
+      .parcel-act
+

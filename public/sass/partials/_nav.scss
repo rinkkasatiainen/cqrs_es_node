@@ -1,0 +1,133 @@
+.nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row-reverse;
+  grid-column-gap: 50px;
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__link {
+    background: $black;
+    color: white;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    text-transform: uppercase;
+    padding: 1.2rem 2rem 1rem 2rem;
+    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    border-bottom: 5px solid transparent;
+    & > span {
+      padding: 0 1em;
+    }
+    svg {
+      width: 40px;
+      transition: all 0.2s;
+      fill: white;
+      margin-bottom: 1rem;
+    }
+    &:hover, &--active {
+      border-bottom-color: rgba(0,0,0,0.2);
+      border-right-color: rgba(0,0,0,0.05);
+      svg {
+        transform: scale(1.2)
+      }
+      background: linear-gradient(90deg, #48ded4 0%, #a026bf 20%, #e82c75 60%, $yellow 85%, #48ded4 95%) fixed;
+      // background: none;
+    }
+    &--logo {
+      &:hover {
+        svg {
+          transform: none;
+        }
+      }
+      svg {
+        width: 200px;
+        margin: 0;
+      }
+    }
+  }
+}
+.tmp_nav{
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  background: $black;
+  &__section {
+    display: flex;
+    &--search {
+      flex: 1 1 auto;
+    }
+  }
+  &__item {
+    display: flex;
+  }
+
+}
+
+.nav_ {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  background: $black;
+  &__section {
+    display: flex;
+    &--search {
+      flex: 1 1 auto;
+    }
+  }
+  &__item {
+    display: flex;
+  }
+  &__link {
+    background: $black;
+    color: white;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    text-transform: uppercase;
+    padding: 1.2rem 2rem 1rem 2rem;
+    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    border-bottom: 5px solid transparent;
+    svg {
+      width: 40px;
+      transition: all 0.2s;
+      fill: white;
+      margin-bottom: 1rem;
+    }
+    &:hover, &--active {
+      border-bottom-color: rgba(0,0,0,0.2);
+      border-right-color: rgba(0,0,0,0.05);
+      svg {
+        transform: scale(1.2)
+      }
+      background: linear-gradient(90deg, #48ded4 0%, #a026bf 20%, #e82c75 60%, $yellow 85%, #48ded4 95%) fixed;
+      // background: none;
+    }
+    & > span {
+      padding: 0 1em;
+    }
+    &--logo {
+      &:hover {
+        svg {
+          transform: none;
+        }
+      }
+      svg {
+        width: 200px;
+        margin: 0;
+      }
+    }
+  }
+}
+

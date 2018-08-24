@@ -1,0 +1,10 @@
+
+mixin parcelStatus(event, events)
+  - if (events.includes(event))
+    string
+    span.status__color(style="background:green")
+  - else
+    span.status__color(style="background:grey")
+
+mixin parcelStatus2(style)
+  span.status__color(style="#{style}")

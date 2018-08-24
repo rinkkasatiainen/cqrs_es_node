@@ -1,0 +1,24 @@
+extends ../layout/customs-layout
+
+include ../layout/mixins/_parcel-status-row
+include ../mixins/parcel/_new
+include ../parcel/mixins/_customer-details
+include ../parcel/mixins/_parcel-events
+
+block content
+
+  block parcel-header
+    h2 Manage Shipment
+
+  .parcel
+    .parcel__row.parcel-status
+      +parcelStatusRow(event_types)
+    block parcel-content
+      .parcel__row.parcel-customer.customer
+        +customerDetails(owner)
+      .parcel__row.parcel-events
+        +parcelEvents(events)
+      each link in links
+        form(method=link.method, action=link.href).parcel-act
+          input.button(type="submit" value=`${link.rel} →`)
+

@@ -1,0 +1,25 @@
+extends ../layout/customs-layout
+
+block content
+    
+    br
+    br
+    br
+    a(href='/customs/parcel/new') Create a new shipment
+    br
+    br
+    br
+    form.form(action="/customs/parcel?autonotify=true" method="POST")
+      input(type="hidden" name="address[street]" value="Bygatan 1")
+      input(type="hidden" name="address[postCode]" value="22950")
+      input(type="hidden" name="address[town]" value="JURMO")
+      input(type="hidden" name="address[country]" value='Finland')
+      input(type="hidden" name="customer[name]" value='Kalle Kalander')
+      input(type="hidden" name="customer[phone]" value='044040404')
+      input(type="hidden" name="customer[email]" value='kalle@awesomemail.ax')
+      input(type="hidden" name="parcel[from]" value='IKEA')
+      input(type="hidden" name="parcel[type]" value="Furniture")
+      input(type="hidden" name="parcel[price]" value="100€")
+      input.button(type="submit" value="New shipment from DHL →")
+
+
